@@ -9,11 +9,8 @@
 // Include the essential config-file which also creates the $origo variable with its defaults.
 include(__DIR__.'/config.php');
 
-
-
 // Do it and store it all in variables in the Origo container.
 $origo['title'] = "Origo";
-
 $origo['main'] = <<<EOD
 <section>
     <h1>Välkommen till Origo</h1>

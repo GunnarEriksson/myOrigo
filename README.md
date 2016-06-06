@@ -41,6 +41,13 @@ TextFilter: Applies a number of filters for a text string.
 User: Provides functions to check if a user has logged in or not. The information
 is saved in the session.
 
+Gallery: Provides a gallery for images structured in folders with the img folders
+as root.
+
+CSource: Class for display source code.
+
+Paging: Provides paging function for larger lists. Contains navigation bar.
+
 
 License
 ------------------

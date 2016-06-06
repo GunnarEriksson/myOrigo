@@ -42,7 +42,7 @@ class User
      */
     public function login($user, $password)
     {
-        $sql = "SELECT acronym, name FROM Rm_User WHERE acronym = ? AND password = md5(concat(?, salt))";
+        $sql = "SELECT acronym, name FROM THE_USER_TABLE_IN_DB WHERE acronym = ? AND password = md5(concat(?, salt))";
         $params = array($user, $password);
         $res = $this->db->ExecuteSelectQueryAndFetchAll($sql, $params);
 

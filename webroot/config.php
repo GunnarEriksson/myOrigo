@@ -56,7 +56,7 @@ $origo['favicon']       = 'img/favicon/favicon.ico';
  *
  */
 $origo['lang']         = 'sv';
-$origo['title_append'] = ' | Rental Movies';
+$origo['title_append'] = ' | Origo Boilerplate';
 
 /**
  * The header for the website.
@@ -80,56 +80,11 @@ $menu = array(
             'title' => 'Hem'
         ),
 
-        // Movies menu item
-        'movies'  => array(
-            'text'  =>'Filmer',
-            'url'   =>'movie.php',
-            'title' => 'Filmer'
-        ),
-
-        // News menu item
-        'news'  => array(
-            'text'  =>'Nyheter',
-            'url'   =>'news_blog.php',
-            'title' => 'Nyheter'
-        ),
-
-        // Calendar menu item
-        'calendar'  => array(
-            'text'  =>'Kalender',
-            'url'   =>'calendar.php',
-            'title' => 'Kalender'
-        ),
-
-        // Game menu item
-        'dice'  => array(
-            'text'  =>'Tävling',
-            'url'   =>'dice.php',
-            'title' => 'Tävling'
-        ),
-
-        // About RM menu item
-        'about'  => array(
-            'text'  =>'Om RM',
-            'url'   =>'about.php',
-            'title' => 'Om RM'
-        ),
-
-        // Login menu item is only shown in navigation bar when no user has logged
-        // in.
-        'login'  => array(
-            'text'  =>'Logga in',
-            'url'   =>'login.php',
-            'title' => 'Logga in'
-        ),
-
-        // Account menu item is only shown for a user who has logged in and user
-        // is not admin. If no user has logged in, the login item is shown in
-        // the navigation bar.
-        'account'  => array(
-            'text'  =>'Konto',
+        // Menu with submenu
+        'item'  => array(
+            'text'  =>'Item',
             'url'   =>'',
-            'title' => '',
+            'title' => 'Item',
 
             // Submenu, with some menu items, as part of a existing menu item
             'submenu' => array(
@@ -137,52 +92,9 @@ $menu = array(
                 'items' => array(
                     // Profile menu item of the submenu
                     'item 1'  => array(
-                        'text'  => 'Profil',
-                        'url'   => 'user_profile.php',
-                        'title' => 'Profil'
-                    ),
-
-                    // Logout menu item of the submenu
-                    'item 2'  => array(
-                        'text'  => 'Logga ut',
-                        'url'   => 'logout.php',
-                        'title' => 'Logga ut',
-                    ),
-                ),
-            ),
-        ),
-
-        // Admin menu item is only shown for a user who has logged in as admin.
-        // If no user has logged in as admin, the login item is shown in the
-        // navigation bar.
-        'admin'  => array(
-            'text'  =>'Admin',
-            'url'   =>'',
-            'title' => '',
-
-            // Submenu, with some menu items, as part of a existing menu item
-            'submenu' => array(
-
-                'items' => array(
-                    // Proflie menu item of the submenu
-                    'item 1'  => array(
-                        'text'  => 'Profil',
-                        'url'   => 'user_profile.php',
-                        'title' => 'Profil'
-                    ),
-
-                    // Account menu item of the submenu
-                    'item 2'  => array(
-                        'text'  => 'Konton',
-                        'url'   => 'user_admin.php',
-                        'title' => 'Konton'
-                    ),
-
-                    // Logout menu item of the submenu
-                    'item 3'  => array(
-                        'text'  => 'Logga ut',
-                        'url'   => 'logout.php',
-                        'title' => 'Logga ut',
+                        'text'  => 'Item 1',
+                        'url'   => '',
+                        'title' => 'Item 1'
                     ),
                 ),
             ),
@@ -202,14 +114,14 @@ $menu = array(
  */
 if (isset($_SERVER['REMOTE_ADDR'])) {
     if($_SERVER['REMOTE_ADDR'] == '::1') {
-        $origo['database']['dsn']            = 'mysql:host=localhost;dbname=Rm_Movie;';
+        $origo['database']['dsn']            = 'mysql:host=localhost;dbname=;';
         $origo['database']['username']       = 'root';
         $origo['database']['password']       = '';
         $origo['database']['driver_options'] = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'");
     } else {
-        define('DB_PASSWORD', 'uiJ7A6:g');
-        $origo['database']['dsn']            = 'mysql:host=blu-ray.student.bth.se;dbname=guer16;';
-        $origo['database']['username']       = 'guer16';
+        define('DB_PASSWORD', '');
+        $origo['database']['dsn']            = 'mysql:host=;dbname=;';
+        $origo['database']['username']       = 'userName';
         $origo['database']['password']       = DB_PASSWORD;
         $origo['database']['driver_options'] = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'");
     }
@@ -219,5 +131,5 @@ if (isset($_SERVER['REMOTE_ADDR'])) {
  * The footer for the webpages.
  */
 $origo['footer'] = <<<EOD
-<footer><span class='sitefooter'>Copyright (c) Rental Movies | <a href='http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance'>Unicorn</a></span></footer>
+<footer><span class='sitefooter'>Copyright (c) Origo | <a href='http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance'>Unicorn</a></span></footer>
 EOD;
